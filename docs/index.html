@@ -87,29 +87,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>&amp;quot;Genero y politica&amp;quot;</title>
+  <title>Género y política</title>
 
-  <meta property="description" itemprop="description" content="Welcome to the website. I hope you enjoy it!"/>
+  <meta property="description" itemprop="description" content="Análisis político con perspectiva de género"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="&amp;quot;Genero y politica&amp;quot;"/>
+  <meta property="og:title" content="Género y política"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Welcome to the website. I hope you enjoy it!"/>
+  <meta property="og:description" content="Análisis político con perspectiva de género"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="&amp;quot;Genero y politica&amp;quot;"/>
+  <meta property="og:site_name" content="Género y política"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="&amp;quot;Genero y politica&amp;quot;"/>
-  <meta property="twitter:description" content="Welcome to the website. I hope you enjoy it!"/>
+  <meta property="twitter:title" content="Género y política"/>
+  <meta property="twitter:description" content="Análisis político con perspectiva de género"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["&quot;Genero y politica&quot;"]},{"type":"character","attributes":{},"value":["Welcome to the website. I hope you enjoy it!\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["Género y política"]},{"type":"character","attributes":{},"value":["Análisis político con perspectiva de género\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2057,7 +2057,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"&quot;Genero y politica&quot;","description":"Welcome to the website. I hope you enjoy it!","authors":[]}
+{"title":"Género y política","description":"Análisis político con perspectiva de género","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2065,11 +2065,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
-<a href="index.html" class="title">&amp;quot;Genero y politica&amp;quot;</a>
+<a href="index.html" class="title">Género y política</a>
 </div>
 <div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
+<a href="index.html">Inicio</a>
+<a href="about.html">El equipo</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2079,15 +2079,115 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>&quot;Genero y politica&quot;</h1>
+<h1>Género y política</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Welcome to the website. I hope you enjoy it!</p></p>
+<p><p>Análisis político con perspectiva de género</p></p>
 </div>
 
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>En este trabajo, se hizo un análisis del debate legislativo que se produjo durante la sanción de la ley de cupo femenino en la provincia de Neuquén. La ley N° 2161 se aprobó por unanimidad el 8 de marzo de 1996. El análisis se llevó adelante aplicando herramientas de minería de texto de R.</p>
+<p>En este trabajo nos centramos en el debate ocurrido en el recinto durante el tratamiento en general de la ley, que es el momento en que los diputados y las diputadas esgrimen su posición y sus argumentos con mayor profundidad. A partir de la versión taquigráfica, se aplicaron herramientas de limpieza y análisis de datos para recuperar algunas palabras claves del debate. También se elaboraron visualizaciones con las palabras más repetidas durante las intervenciones.</p>
+<p>La ley de cupo modificó el artículo 58 de la ley electoral provincial N° 165, estableciendo que las listas partidarias debían estar integradas en un mínimo de un 30% por candidatas mujeres. Creemos que su análisis es una herramienta importante para comprender las dinámicas políticas al momento de definir los alcances de la representatividad y las desigualdades de género que se producen en ese proceso. El análisis en R</p>
+<p>Como primer paso, instalamos paquetes y encendimos las librerías que se utilizaron para trabajar con los datos.</p>
+<p><span style="color:green">#<em>### Instalación de paquetes ###</em></span></p>
+<pre><code>install.packages(&quot;tm&quot;)
+install.packages(&quot;NLP&quot;)
+install.packages(&quot;SnowballC&quot;)
+install.packages(&quot;wordcloud&quot;)
+install.packages(&quot;RColorBrewer&quot;)
+install.packages(&quot;stringr&quot;)</code></pre>
+<p><span style="color:green">#<em>### Carga de librerias ###</em></span></p>
+<pre><code>library(tm)
+library(NLP)
+library(SnowballC)
+library(RColorBrewer)
+library(wordcloud)
+library(stringi)
+library(stringr)
+library(ggplot2)</code></pre>
+<p>Luego se cargaron los datos con los que se iban a trabajar. En este caso, un archivo .txt con la versión taquigráfica</p>
+<p><span style="color:green">#<em>### Carga de datos###</em></span></p>
+<pre><code>cupo &lt;- readLines(&quot;C:/Users/lucre/Desktop/cupo/Ley de cupo.txt&quot;)
+cupo = iconv(cupo, to=&quot;ASCII//TRANSLIT&quot;)
+cupo = Corpus(VectorSource(cupo))</code></pre>
+<p>Se utilizó la función length (longitud) para conocer la extensión en palabras del debate.</p>
+<pre><code>str(cupo)
+str_length(cupo)</code></pre>
+<p>El resultado fue de 86131 palabras.</p>
+<p>Como tercer paso, se hizo un proceso de limpieza mediante el cual se eliminaron puntuaciones, comas, espacios en blanco y se convirtió todo el texto en minúscula. También eliminamos las palabras vacías con “stopwords” y creamos el corpus a partir del vector</p>
+<p><span style="color:green">#<em>### Limpieza y corpus###</em></span></p>
+<pre><code>debate_cupo &lt;- cupo %&gt;% 
+  str_replace_all(., &quot;[[:cntrl:]]&quot;, &quot; &quot;) %&gt;% 
+  str_to_lower() %&gt;% 
+  removePunctuation() %&gt;% 
+  str_replace_all(., &quot;—&quot;, &quot; &quot;)
+
+debate_cupo &lt;- removeWords(debate_cupo, words = stopwords(&quot;spanish&quot;))
+
+debate_cupo &lt;- stripWhitespace(debate_cupo)
+
+corpus_cupo &lt;- debate_cupo %&gt;%  
+  VectorSource() %&gt;%
+  Corpus()</code></pre>
+<p>Luego, comenzamos con el proceso de visualización de datos. Se realizó una nube de palabras (librería wordcloud) que nos muestra los términos más frecuentes usados por los diputados y diputadas que intervinieron durante el debate legislativo de la ley de cupo femenino.</p>
+<p><span style="color:green">#<em>### Nube de palabras ###</em></span></p>
+<pre><code>wordcloud(corpus_cupo, 
+          min.freq = 5,
+          max.words = 80, 
+          random.order = FALSE, 
+          colors = brewer.pal(name = &quot;Dark2&quot;, n = 8))</code></pre>
+<p><img src="Nube%20de%20palabras1.png" alt="Gráfico 1" /> Como quedaban palabras que eran de poco interés para el análisis, tales como “muchas”, “veces” y “sino”, entre otras, realizamos una segunda limpieza del texto.</p>
+<pre><code>a_retirar &lt;- c(&quot;muchas&quot;, &quot;veces&quot;, &quot;siempre&quot;, &quot;sino&quot;, &quot;asi&quot;, &quot;mas&quot;, 
+               &quot;tambien&quot;)
+
+debate_cupo &lt;- removeWords(debate_cupo, words = a_retirar)
+
+corpus_cupo &lt;- debate_cupo %&gt;% 
+  VectorSource() %&gt;%
+  Corpus()
+
+wordcloud(corpus_cupo, 
+          min.freq = 5,
+          max.words = 80, 
+          random.order = FALSE, 
+          colors = brewer.pal(name = &quot;Dark2&quot;, n = 8)
+)</code></pre>
+<figure>
+<img src="Nube%20de%20palabras%202.png" alt="Gráfico 2" /><figcaption aria-hidden="true">Gráfico 2</figcaption>
+</figure>
+<p>“Mujer”, “Mujeres” y “presidente” son las palabras que se utilizaron en el debate con mayor frecuencia. Se puede observar la presencia de palabras que hacen referencia a la igualdad y a los derechos en la participación política.</p>
+<p>El último paso fue trabajar con la frecuencia de palabras en cantidades, utilizando ggplot2 para hacer el gráfico.</p>
+<p>Para eso, primero transformamos nuestro objeto corpus_cupo en un objeto de clase matrix. Eso nos permitió tener las sumas de renglones ordenadas en forma decreciente para conocer la frecuencia de cada palabra. Con eso, transformamos los resultados a objeto de clase data.frame de dos columnas, palabra y frecuencia, y luego graficamos su contenido.</p>
+<p><span style="color:green"><em>###Frecuencia de palabras###</em></span></p>
+<pre><code>palabras &lt;- corpus_cupo %&gt;% 
+  TermDocumentMatrix() %&gt;% 
+  as.matrix() %&gt;% 
+  rowSums() %&gt;% 
+  sort(decreasing = TRUE)
+
+palabras %&gt;% 
+  head(20)
+
+frecuencias &lt;- data.frame(
+  palabra = names(palabras),
+  frecuencia = palabras
+)
+
+frecuencias[1:10,] %&gt;% 
+  ggplot() +
+  aes(frecuencia, y = reorder(palabra, frecuencia)) +
+  geom_bar(stat = &quot;identity&quot;, color = &quot;white&quot;, fill = &quot;violet&quot;) +
+  geom_text(aes(label = frecuencia, hjust = 1.5), color = &quot;white&quot;) +
+  labs(
+    x = NULL,
+    y = &quot;Palabras más utilizadas en el debate&quot;
+  )</code></pre>
+<figure>
+<img src="Barras%20frecuencia.png" alt="Gráfico 3" /><figcaption aria-hidden="true">Gráfico 3</figcaption>
+</figure>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

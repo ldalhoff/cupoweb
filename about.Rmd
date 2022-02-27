@@ -1,8 +1,14 @@
 ---
-title: "About this site"
+title: "Quiénes somos"
 description: |
-  Some additional details about the website
+  Información sobre el equipo
 ---
+Somos un equipo de profesionales de distintas disciplinas con más de 10 años de trayectoria en el área de la Comunicación Política y la investigación social.
+
+Coincidimos en una premisa fundamental: abordar la realidad de lo político y lo social con herramientas destinadas a incrementar las capacidades institucionales, fortalecer el desempeño de la acción política y mejorar el proceso de toma de decisiones en entornos complejos.
+
+Además de trabajar en proyectos de investigación, realizamos asesoramiento integral, consultoría y tareas de difusión en opinión pública, política y gestión de campañas electorales.
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
